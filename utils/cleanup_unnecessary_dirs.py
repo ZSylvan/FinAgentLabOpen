@@ -126,36 +126,6 @@ def update_gitignore():
     except Exception as e:
         logger.error(f"❌ 更新.gitignore失败: {e}")
 
-def analyze_upstream_contribution():
-    """分析upstream_contribution目录"""
-    logger.debug(f"\n🔍 分析upstream_contribution目录")
-    logger.info(f"=")
-    
-    upstream_dir = Path("upstream_contribution")
-    
-    if not upstream_dir.exists():
-        logger.info(f"✅ upstream_contribution目录不存在")
-        return
-    
-    # 统计内容
-    batch_dirs = list(upstream_dir.glob("batch*"))
-    json_files = list(upstream_dir.glob("*.json"))
-    
-    logger.info(f"📊 发现内容:")
-    logger.info(f"   - Batch目录: {len(batch_dirs)}个")
-    logger.info(f"   - JSON文件: {len(json_files)}个")
-    
-    for batch_dir in batch_dirs:
-        logger.info(f"   - {batch_dir.name}: {len(list(batch_dir.rglob('*')))}个文件")
-    
-    # 询问是否删除
-    logger.info(f"\n💡 upstream_contribution目录用途:")
-    logger.info(f"   - 准备向上游项目(TauricResearch/TradingAgents)贡献代码")
-    logger.info(f"   - 包含移除中文内容的版本")
-    logger.info(f"   - 如果不计划向上游贡献，可以删除")
-    
-    return len(batch_dirs) + len(json_files)
-
 def main():
     """主函数"""
     logger.info(f"🧹 FinAgentLab 目录清理工具")
@@ -169,25 +139,16 @@ def main():
     # 更新gitignore
     update_gitignore()
     
-    # 分析upstream_contribution
-    upstream_count = analyze_upstream_contribution()
-    
     # 总结
     logger.info(f"\n📊 清理总结")
     logger.info(f"=")
     logger.info(f"✅ 清理了 {cleaned_count} 个文件/目录")
     logger.info(f"📝 更新了 .gitignore 文件")
     
-    if upstream_count > 0:
-        logger.warning(f"⚠️ upstream_contribution目录包含 {upstream_count} 个项目")
-        logger.info(f"   如果不需要向上游贡献，可以手动删除:")
-        logger.info(f"   rm -rf upstream_contribution/")
-    
     logger.info(f"\n🎉 清理完成！项目目录更加整洁")
     logger.info(f"\n💡 建议:")
     logger.info(f"   1. 检查git状态: git status")
     logger.info(f"   2. 提交清理更改: git add . && git commit -m '清理不必要的目录和文件'")
-    logger.info(f"   3. 如果不需要upstream_contribution，可以手动删除")
 
 if __name__ == "__main__":
     main()

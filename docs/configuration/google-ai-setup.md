@@ -278,7 +278,7 @@ python tests/test_correct_apis.py
 
 1. 📖 查看 [完整文档](../../README.md)
 2. 🧪 运行 [测试程序](../../tests/)
-3. 💬 提交 [GitHub Issue](https://github.com/YOUR_USERNAME/FinAgentLab/issues)
+3. 💬 提交 [GitHub Issue](https://github.com/ZSylvan/FinAgentLab/issues)
 
 ## 🎉 开始使用
 

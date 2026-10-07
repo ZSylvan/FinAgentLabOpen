@@ -50,7 +50,7 @@ def create_release_tag():
     """创建发布标签"""
     logger.info(f"🏷️ 创建版本标签...")
     
-    tag_name = "cn-v0.1.2"
+    tag_name = "v0.1.2"
     tag_message = "FinAgentLab v0.1.2 - Web管理界面和Google AI支持"
     
     # 检查标签是否已存在
@@ -143,13 +143,9 @@ python cli/main.py --stock AAPL --analysts market fundamentals
 - 🧪 [测试指南](./tests/README.md)
 - 💡 [示例代码](./examples/)
 
-### 🙏 致谢
-
-感谢 [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) 原始项目的开发者们，为金融AI领域提供了优秀的开源框架。
-
 ### 📄 许可证
 
-本项目遵循 Apache 2.0 许可证。
+许可范围和第三方归属请参阅仓库中的 LICENSE 与 THIRD_PARTY_NOTICES.md。
 """
     
     # 保存发布说明
@@ -184,7 +180,7 @@ def show_release_summary():
     logger.info(f"\n🚀 下一步操作:")
     logger.info(f"  1. 检查所有更改: git status")
     logger.info(f"  2. 提交更改: git add . && git commit -m 'Release v0.1.2'")
-    logger.info(f"  3. 推送标签: git push origin cn-v0.1.2")
+    logger.info(f"  3. 推送标签: git push origin v0.1.2")
     logger.info(f"  4. 创建GitHub Release")
     
     logger.info(f"\n💡 使用方法:")

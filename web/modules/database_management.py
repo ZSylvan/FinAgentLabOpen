@@ -290,7 +290,8 @@ def main():
     st.markdown("""
     <div style='text-align: center; color: #666; font-size: 0.9em;'>
         🗄️ 数据库缓存管理系统 | FinAgentLab v0.1.2 | 
-        <a href='https://github.com/YOUR_USERNAME/FinAgentLab' target='_blank'>GitHub</a>
+        <a href='https://github.com/ZSylvan/FinAgentLab'
+           target='_blank'>GitHub</a>
     </div>
     """, unsafe_allow_html=True)
 

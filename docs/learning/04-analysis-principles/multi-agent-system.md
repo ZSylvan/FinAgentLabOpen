@@ -427,5 +427,5 @@ class MultiAgentSystem:
 
 ## 🔗 相关资源
 
-- 📖 [FinAgentLab项目介绍](../06-resources/finagentlab-intro.md)
+- 📖 [FinAgentLab 快速入门](../../ONBOARDING.md)
 - 📖 [风险提示](../05-risks-limitations/risk-warnings.md)

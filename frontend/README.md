@@ -301,11 +301,10 @@ const exampleStore = useExampleStore()
 
 ## 📞 技术支持
 
-如有问题，请通过以下方式联系：
+如有问题，请通过当前仓库反馈：
 
-- 📧 邮箱: hsliup@163.com
-- 💬 微信群: 扫描README中的二维码
-- 🐛 问题反馈: GitHub Issues
+- 🐛 问题反馈: https://github.com/ZSylvan/FinAgentLab/issues
+- 📖 文档: https://github.com/ZSylvan/FinAgentLab/tree/main/docs
 
 ---
 

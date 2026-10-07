@@ -115,15 +115,13 @@ htmlcov/
 docs/_build/
 site/
 
-# 贡献相关文档 (不纳入版本控制)
-docs/contribution/
-
 # 版本预览文档 (不纳入版本控制)
 docs/v1.0.0-preview/
 
 # AI工具目录 (不纳入版本控制)
 .trae/
 .augment/
+.understand-anything/
 
 # 自动清理脚本添加的规则
 # Python包元数据
@@ -203,7 +201,7 @@ frontend/dist/
 ehthumbs.db
 
 
-# Upstream source snapshots (do not track)
+# Historical source snapshots (do not track)
 back/
 
 # Historical backup snapshots (do not track)

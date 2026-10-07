@@ -131,7 +131,7 @@ onUnmounted(() => {
 })
 
 function showHelp() {
-  window.open('https://mp.weixin.qq.com/s/ppsYiBncynxlsfKFG8uEbw', '_blank')
+  window.open('https://github.com/ZSylvan/FinAgentLab/tree/main/docs', '_blank')
 }
 </script>
 

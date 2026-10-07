@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "finagentlab"
 version = "1.0.0-preview"
-description = "Add your description here"
+description = "Multi-agent financial analysis platform for learning, research, and engineering experiments"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -95,4 +95,4 @@ finagentlab = "main:main"
 
 [tool.setuptools.packages.find]
 include = ["finagentlab*"]
-exclude = ["tests*", "docs*", "scripts*", "data*", "logs*", "reports*", "results*", "eval_results*", "upstream_contribution*"]
+exclude = ["tests*", "docs*", "scripts*", "data*", "logs*", "reports*", "results*", "eval_results*"]

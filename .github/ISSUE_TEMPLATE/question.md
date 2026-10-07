@@ -120,6 +120,5 @@ If helpful, please add screenshots.
 - 🚀 [快速开始指南](../../README.md#🚀-启动应用)
 - ⚙️ [配置说明](../../README.md#配置api密钥)
 
-**社区支持 / Community Support:**
-- 💬 [GitHub Discussions](https://github.com/YOUR_USERNAME/FinAgentLab/discussions)
-- 📧 邮箱: hsliup@163.com
+**项目支持 / Project Support:**
+- 🐛 [GitHub Issues](https://github.com/ZSylvan/FinAgentLab/issues)

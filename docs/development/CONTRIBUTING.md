@@ -49,7 +49,7 @@
 
 ### 1. 克隆仓库
 ```bash
-git clone https://github.com/YOUR_USERNAME/FinAgentLab.git
+git clone https://github.com/ZSylvan/FinAgentLab.git
 cd FinAgentLab
 ```
 

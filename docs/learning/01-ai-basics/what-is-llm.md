@@ -220,4 +220,4 @@ A: 需要考虑多个因素：任务需求、成本预算、响应速度、准�
 **相关资源**：
 - [OpenAI GPT系列](https://openai.com/research/gpt-4)
 - [Transformer论文](https://arxiv.org/abs/1706.03762)
-- [FinAgentLab项目](../06-resources/finagentlab-intro.md)
+- [FinAgentLab 快速入门](../../ONBOARDING.md)

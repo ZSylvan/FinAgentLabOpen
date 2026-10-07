@@ -252,7 +252,10 @@ def main():
     if success:
         print_colored("\n🎉 安装完成!", Colors.GREEN)
         print_colored("📖 详细文档: docs/ONBOARDING.md", Colors.BLUE)
-        print_colored("❓ 遇到问题: https://github.com/YOUR_USERNAME/FinAgentLab/issues", Colors.BLUE)
+        print_colored(
+            "❓ 遇到问题: https://github.com/ZSylvan/FinAgentLab/issues",
+            Colors.BLUE,
+        )
     else:
         print_colored("\n❌ 安装失败", Colors.RED)
         print_colored("📖 请查看入门指南: docs/ONBOARDING.md", Colors.YELLOW)

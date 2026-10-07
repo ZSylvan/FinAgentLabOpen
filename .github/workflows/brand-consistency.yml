@@ -1,0 +1,22 @@
+name: Brand consistency
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: agent
+          auto-activate-base: false
+          python-version: "3.11"
+      - name: Reject legacy product branding outside legal notices
+        run: conda run -n agent python scripts/maintenance/check_brand_consistency.py

@@ -4,11 +4,11 @@
 """
 
 import time
-from typing import Optional
 
-from fastapi import APIRouter, Depends, HTTPException, Header, Request
+from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel
 
+from app.dependencies.auth import get_current_user, require_admin
 from app.services.auth_service import AuthService
 from app.services.user_service import user_service
 from app.models.user import UserCreate, UserUpdate
@@ -65,53 +65,6 @@ class CreateUserRequest(BaseModel):
     email: str
     password: str
     is_admin: bool = False
-
-async def get_current_user(authorization: Optional[str] = Header(default=None)) -> dict:
-    """获取当前用户信息"""
-    logger.debug(f"🔐 认证检查开始")
-    logger.debug(f"📋 Authorization header: {authorization[:50] if authorization else 'None'}...")
-
-    if not authorization:
-        logger.warning("❌ 没有Authorization header")
-        raise HTTPException(status_code=401, detail="No authorization header")
-
-    if not authorization.lower().startswith("bearer "):
-        logger.warning(f"❌ Authorization header格式错误: {authorization[:20]}...")
-        raise HTTPException(status_code=401, detail="Invalid authorization format")
-
-    token = authorization.split(" ", 1)[1]
-    logger.debug(f"🎫 提取的token长度: {len(token)}")
-    logger.debug(f"🎫 Token前20位: {token[:20]}...")
-
-    token_data = AuthService.verify_token(token)
-    logger.debug(f"🔍 Token验证结果: {token_data is not None}")
-
-    if not token_data:
-        logger.warning("❌ Token验证失败")
-        raise HTTPException(status_code=401, detail="Invalid token")
-
-    # 从数据库获取用户信息
-    user = await user_service.get_user_by_username(token_data.sub)
-    if not user:
-        logger.warning(f"❌ 用户不存在: {token_data.sub}")
-        raise HTTPException(status_code=401, detail="User not found")
-
-    if not user.is_active:
-        logger.warning(f"❌ 用户已禁用: {token_data.sub}")
-        raise HTTPException(status_code=401, detail="User is inactive")
-
-    logger.debug(f"✅ 认证成功，用户: {token_data.sub}")
-
-    # 返回完整的用户信息，包括偏好设置
-    return {
-        "id": str(user.id),
-        "username": user.username,
-        "email": user.email,
-        "name": user.username,
-        "is_admin": user.is_admin,
-        "roles": ["admin"] if user.is_admin else ["user"],
-        "preferences": user.preferences.model_dump() if user.preferences else {}
-    }
 
 @router.post("/login")
 async def login(payload: LoginRequest, request: Request):
@@ -399,14 +352,10 @@ async def change_password(
 async def reset_password(
     payload: ResetPasswordRequest,
     request: Request,
-    user: dict = Depends(get_current_user)
+    user: dict = Depends(require_admin)
 ):
     """重置密码（管理员操作）"""
     try:
-        # 检查权限
-        if not user.get("is_admin", False):
-            raise HTTPException(status_code=403, detail="权限不足")
-
         # 重置密码
         success = await user_service.reset_password(payload.username, payload.new_password)
         
@@ -428,14 +377,10 @@ async def reset_password(
 async def create_user(
     payload: CreateUserRequest,
     request: Request,
-    user: dict = Depends(get_current_user)
+    user: dict = Depends(require_admin)
 ):
     """创建用户（管理员操作）"""
     try:
-        # 检查权限
-        if not user.get("is_admin", False):
-            raise HTTPException(status_code=403, detail="权限不足")
-
         # 创建用户
         user_create = UserCreate(
             username=payload.username,
@@ -479,14 +424,10 @@ async def create_user(
 async def list_users(
     skip: int = 0,
     limit: int = 100,
-    user: dict = Depends(get_current_user)
+    user: dict = Depends(require_admin)
 ):
     """获取用户列表（管理员操作）"""
     try:
-        # 检查权限
-        if not user.get("is_admin", False):
-            raise HTTPException(status_code=403, detail="权限不足")
-
         users = await user_service.list_users(skip=skip, limit=limit)
         
         return {

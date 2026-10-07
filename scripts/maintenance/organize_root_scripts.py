@@ -26,7 +26,6 @@ def organize_root_scripts():
     file_moves = {
         # 验证脚本 -> scripts/validation/
         "check_dependencies.py": "scripts/validation/check_dependencies.py",
-        "verify_gitignore.py": "scripts/validation/verify_gitignore.py",
         "smart_config.py": "scripts/validation/smart_config.py",
         
         # 测试脚本 -> tests/
@@ -38,15 +37,8 @@ def organize_root_scripts():
         "adaptive_cache_manager.py": "scripts/development/adaptive_cache_manager.py",
         "organize_scripts.py": "scripts/development/organize_scripts.py",
         
-        # 设置脚本 -> scripts/setup/
-        "setup_fork_environment.ps1": "scripts/setup/setup_fork_environment.ps1",
-        
         # 维护脚本 -> scripts/maintenance/
-        "remove_contribution_from_git.ps1": "scripts/maintenance/remove_contribution_from_git.ps1",
-        "analyze_differences.ps1": "scripts/maintenance/analyze_differences.ps1",
         "debug_integration.ps1": "scripts/maintenance/debug_integration.ps1",
-        "integrate_cache_improvements.ps1": "scripts/maintenance/integrate_cache_improvements.ps1",
-        "migrate_first_contribution.ps1": "scripts/maintenance/migrate_first_contribution.ps1",
         "create_scripts_structure.ps1": "scripts/maintenance/create_scripts_structure.ps1",
     }
     
@@ -123,7 +115,6 @@ def organize_root_scripts():
 
 ## 脚本列表
 
-- `verify_gitignore.py` - 验证Git忽略配置，确保docs/contribution目录不被版本控制
 - `check_dependencies.py` - 检查项目依赖是否正确安装
 - `smart_config.py` - 智能配置检测和管理
 
@@ -134,7 +125,6 @@ def organize_root_scripts():
 cd C:\\code\\FinAgentLab
 
 # 运行验证脚本
-python scripts/validation/verify_gitignore.py
 python scripts/validation/check_dependencies.py
 python scripts/validation/smart_config.py
 ```

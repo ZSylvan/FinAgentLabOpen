@@ -8,7 +8,7 @@
 
 ## 1. 项目概览
 
-**FinAgentLab** 是一个面向中文用户的多智能体与大模型股票分析学习平台。基于 [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) 框架，通过 LangGraph 编排多个 AI 分析师智能体进行多空辩论，最终由管理层综合决策。
+**FinAgentLab** 是一个面向中文用户的多智能体与大模型股票分析学习平台。系统通过 LangGraph 编排多个 AI 分析师智能体进行多空辩论，最终由管理层综合决策。
 
 | 属性 | 值 |
 |---|---|
@@ -20,7 +20,7 @@
 | **LLM 提供商** | OpenAI, Google AI, DeepSeek, DashScope, Anthropic, 千帆等 11 种 |
 | **部署方式** | Docker 多架构 (amd64/arm64) + Nginx 反向代理 |
 | **报告导出** | Markdown / Word / PDF (pandoc + wkhtmltopdf) |
-| **许可证** | 混合许可证: 核心代码 Apache 2.0, app/ 和 frontend/ 需商业授权 |
+| **许可证** | 继承组件遵循 Apache 2.0；FinAgentLab 专有改动限非商业使用，详见根 LICENSE |
 
 ### 核心工作流
 
@@ -135,7 +135,6 @@
 | `docker-compose.hub.nginx.arm.yml` | ARM64 生产部署 |
 | `nginx/nginx.conf` | Nginx 反向代理配置 |
 | `.github/workflows/docker-publish.yml` | Docker 自动构建发布 CI |
-| `.github/workflows/upstream-sync-check.yml` | 上游仓库同步检查 |
 | `scripts/build-*.sh/ps1` | 多架构构建脚本 (amd64/arm64/multiarch) |
 | `scripts/deployment/` | 便携版打包部署脚本 |
 | `scripts/installer/` | 安装器与启动编排脚本 |
@@ -277,7 +276,7 @@ stock_bid_ask_em → stock_zh_a_spot → stock_zh_a_spot_em → stock_zh_a_hist
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/YOUR_USERNAME/FinAgentLab
+git clone https://github.com/ZSylvan/FinAgentLab
 cd FinAgentLab
 
 # 2. 配置环境变量
@@ -348,6 +347,4 @@ curl -X POST http://localhost:8000/api/analysis/single \
 
 ---
 
-> 💡 **提示**: 将此文件提交到仓库，方便团队成员入职参考。
->
-> 生成工具: [Understand Anything](https://github.com/hsliuping/Understand-Anything) | 图谱节点: 5,099 | 图谱边: 6,767
+> 💡 **提示**: 将此文件与当前代码一同维护，确保新成员看到的结构和命令仍然有效。

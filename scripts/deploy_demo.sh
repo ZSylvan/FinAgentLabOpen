@@ -29,8 +29,8 @@ NC='\033[0m' # No Color
 
 # 配置
 PROJECT_NAME="FinAgentLab-Demo"
-GITHUB_REPO="https://github.com/YOUR_USERNAME/FinAgentLab"
-GITHUB_RAW="https://raw.githubusercontent.com/your-org/FinAgentLab/main"
+GITHUB_REPO="https://github.com/ZSylvan/FinAgentLab"
+GITHUB_RAW="https://raw.githubusercontent.com/ZSylvan/FinAgentLab/main"
 
 ################################################################################
 # 工具函数
@@ -376,7 +376,7 @@ show_info() {
     echo -e "  停止服务: ${GREEN}docker compose -f docker-compose.hub.yml stop${NC}"
     echo ""
     echo -e "${BLUE}文档:${NC}"
-    echo -e "  完整文档: ${GREEN}https://github.com/YOUR_USERNAME/FinAgentLab/blob/main/docs/deploy_demo_system.md${NC}"
+    echo -e "  完整文档: ${GREEN}https://github.com/ZSylvan/FinAgentLab/tree/main/docs${NC}"
     echo ""
 }
 
@@ -415,4 +415,3 @@ main() {
 
 # 运行主函数
 main
-

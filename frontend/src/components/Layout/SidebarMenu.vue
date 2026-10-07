@@ -32,6 +32,11 @@
       <template #title>任务中心</template>
     </el-menu-item>
 
+    <el-menu-item index="/evaluations">
+      <el-icon><DataAnalysis /></el-icon>
+      <template #title>历史回顾评估</template>
+    </el-menu-item>
+
     <el-menu-item index="/screening">
       <el-icon><Search /></el-icon>
       <template #title>股票筛选</template>
@@ -112,7 +117,8 @@ import {
   /* Document 移除：不再使用顶级分析报告菜单图标 */
   Setting,
   InfoFilled,
-  CreditCard
+  CreditCard,
+  DataAnalysis
 } from '@element-plus/icons-vue'
 
 const route = useRoute()

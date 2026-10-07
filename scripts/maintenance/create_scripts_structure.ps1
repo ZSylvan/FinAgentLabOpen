@@ -19,7 +19,6 @@ $ScriptsStructure = @{
             "setup_database.py"
         ),
         "validation" = @(
-            "verify_gitignore.py",
             "check_dependencies.py",
             "validate_config.py",
             "test_api_connections.py"
@@ -27,14 +26,12 @@ $ScriptsStructure = @{
         "maintenance" = @(
             "cleanup_cache.py",
             "backup_data.py",
-            "update_dependencies.py",
-            "sync_upstream.py"
+            "update_dependencies.py"
         ),
         "development" = @(
             "code_analysis.py",
             "performance_benchmark.py",
-            "generate_docs.py",
-            "prepare_contribution.py"
+            "generate_docs.py"
         ),
         "deployment" = @(
             "deploy_web.py",
@@ -112,11 +109,9 @@ python scripts/$subDir/script_name.py
 Write-Host "`n📦 移动现有脚本..." -ForegroundColor Yellow
 
 $ExistingScripts = @(
-    @{ Source = "C:\code\verify_gitignore.py"; Target = "scripts\validation\verify_gitignore.py" },
     @{ Source = "C:\code\check_dependencies.py"; Target = "scripts\validation\check_dependencies.py" },
     @{ Source = "C:\code\smart_config.py"; Target = "scripts\setup\smart_config.py" },
-    @{ Source = "C:\code\debug_integration.ps1"; Target = "scripts\development\debug_integration.ps1" },
-    @{ Source = "C:\code\remove_contribution_from_git.ps1"; Target = "scripts\maintenance\remove_contribution_from_git.ps1" }
+    @{ Source = "C:\code\debug_integration.ps1"; Target = "scripts\development\debug_integration.ps1" }
 )
 
 foreach ($script in $ExistingScripts) {
@@ -158,7 +153,7 @@ $MainReadmeContent = @"
 - 缓存清理
 - 数据备份
 - 依赖更新
-- 上游同步
+- 版本维护
 
 ### 🛠️ development/ - 开发辅助脚本
 - 代码分析
@@ -190,7 +185,7 @@ $MainReadmeContent = @"
 cd C:\code\FinAgentLab
 
 # Python脚本
-python scripts/validation/verify_gitignore.py
+python scripts/validation/check_dependencies.py
 
 # PowerShell脚本
 powershell -ExecutionPolicy Bypass -File scripts/maintenance/cleanup.ps1

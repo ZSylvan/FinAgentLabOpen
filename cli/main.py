@@ -318,7 +318,7 @@ def update_display(layout, spinner_text=None):
     layout["header"].update(
         Panel(
             "[bold green]Welcome to FinAgentLab CLI[/bold green]\n"
-            "[dim]© [Tauric Research](https://github.com/TauricResearch)[/dim]",
+            "[dim]https://github.com/ZSylvan/FinAgentLab[/dim]",
             title="Welcome to FinAgentLab",
             border_style="green",
             padding=(1, 2),
@@ -535,7 +535,8 @@ def get_user_selections():
     welcome_content += "[bold]工作流程 | Workflow Steps:[/bold]\n"
     welcome_content += "I. 分析师团队 | Analyst Team → II. 研究团队 | Research Team → III. 交易员 | Trader → IV. 风险管理 | Risk Management → V. 投资组合管理 | Portfolio Management\n\n"
     welcome_content += (
-        "[dim]Built by [Tauric Research](https://github.com/TauricResearch)[/dim]"
+        "[dim]Maintained at [ZSylvan/FinAgentLab]"
+        "(https://github.com/ZSylvan/FinAgentLab)[/dim]"
     )
 
     # Create and center the welcome box
@@ -1750,8 +1751,11 @@ def version():
     logger.info(f"[green]框架 | Framework:[/green] 多智能体金融交易分析 | Multi-Agent Financial Trading Analysis")
     logger.info(f"[green]支持的语言 | Languages:[/green] 中文 | English")
     logger.info(f"[green]开发状态 | Development Status:[/green] [yellow]早期预览版，功能持续完善中[/yellow]")
-    logger.info(f"[green]基于项目 | Based on:[/green] [blue]TauricResearch/TradingAgents[/blue]")
-    logger.info(f"[green]创建目的 | Purpose:[/green] [cyan]更好地在中国推广FinAgentLab[/cyan]")
+    logger.info(
+        "[green]项目仓库 | Repository:[/green] "
+        "[blue]ZSylvan/FinAgentLab[/blue]"
+    )
+    logger.info(f"[green]创建目的 | Purpose:[/green] [cyan]学习、研究与工程实验[/cyan]")
     logger.info(f"[green]主要功能 | Features:[/green]")
     logger.info(f"  • 🤖 多智能体协作分析 | Multi-agent collaborative analysis")
     logger.info(f"  • 🇨🇳 阿里百炼大模型支持 | Alibaba DashScope support")
@@ -1765,12 +1769,9 @@ def version():
     logger.info(f"  • 投资建议仅供参考，请谨慎决策")
     logger.info(f"  • 欢迎反馈问题和改进建议")
 
-    logger.info(f"\n[blue]🙏 致敬源项目 | Tribute to Original Project:[/blue]")
-    logger.info(f"  • 💎 感谢 Tauric Research 团队提供的珍贵源码")
-    logger.info(f"  • 🔄 感谢持续的维护、更新和改进工作")
-    logger.info(f"  • 🌍 感谢选择Apache 2.0协议的开源精神")
-    logger.info(f"  • 🎯 本项目旨在更好地在中国推广FinAgentLab")
-    logger.info(f"  • 🔗 源项目: https://github.com/TauricResearch/TradingAgents")
+    logger.info(f"\n[blue]📄 许可与来源 | License and Sources:[/blue]")
+    logger.info(f"  • 详见 LICENSE 与 THIRD_PARTY_NOTICES.md")
+    logger.info(f"  • 项目仓库: https://github.com/ZSylvan/FinAgentLab")
 
 
 @app.command(
@@ -2019,7 +2020,7 @@ def help_chinese():
     logger.info(f"• 项目文档: docs/ 目录")
     logger.info(f"• 示例程序: examples/ 目录")
     logger.info(f"• 集成测试: tests/ 目录")
-    logger.info(f"• GitHub: https://github.com/TauricResearch/TradingAgents")
+    logger.info(f"• GitHub: https://github.com/ZSylvan/FinAgentLab")
 
 
 def main():

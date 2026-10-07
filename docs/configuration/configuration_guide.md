@@ -566,7 +566,7 @@ REDIS_HOST=redis      # Docker服务名
 
 ### 技术支持
 - **邮件**: [待补充]
-- **微信群**: [待补充]
+- **问题反馈**: https://github.com/ZSylvan/FinAgentLab/issues
 
 ---
 

@@ -28,7 +28,7 @@
 - 🤖 多智能体协作分析
 - 🇨🇳 专为中国A股市场优化
 - 📚 学习工具，非投资建议
-- 🔓 开源项目，可自部署
+- 🧰 源码可见并可自部署，具体使用范围以根目录 LICENSE 为准
 
 ### Q2: 与其他股票分析工具有什么区别？
 
@@ -490,7 +490,7 @@ FinAgentLab是**学习工具**，提供的分析仅供参考，不构成投资�
 
 **软件本身**：
 - ✅ 完全免费
-- ✅ 开源项目
+- ✅ 可按根目录 LICENSE 的许可范围自部署
 - ✅ 可自部署
 
 **需要付费的部分**：
@@ -559,9 +559,8 @@ FinAgentLab是**学习工具**，提供的分析仅供参考，不构成投资�
 
 ### 获取帮助
 
-- 💬 GitHub Issues
-- 📧 邮件支持
-- 👥 用户社区
+- 💬 [GitHub Issues](https://github.com/ZSylvan/FinAgentLab/issues)
+- 📖 [项目文档](https://github.com/ZSylvan/FinAgentLab/tree/main/docs)
 
 ---
 

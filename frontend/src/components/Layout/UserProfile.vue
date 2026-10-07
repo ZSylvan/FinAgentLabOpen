@@ -44,7 +44,7 @@ const userAvatar = computed(() => authStore.user?.avatar || undefined)
 const userDisplayName = computed(() => authStore.user?.username || '未登录')
 const userRole = computed(() => {
   if (!authStore.user) return '未登录'
-  return '用户'
+  return authStore.isAdmin ? '管理员' : '用户'
 })
 
 const handleCommand = async (command: string) => {

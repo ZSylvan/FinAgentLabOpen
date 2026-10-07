@@ -490,7 +490,7 @@ cache_config = {
 2. Execute performance benchmarks
 3. Review and clean up any remaining Chinese content
 4. Add comprehensive English documentation
-5. Prepare for upstream contribution
+5. Verify the integrated changes in FinAgentLab
 
 ---
 

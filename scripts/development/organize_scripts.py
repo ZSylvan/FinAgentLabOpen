@@ -29,7 +29,6 @@ def create_scripts_structure():
             "scripts": [
                 "setup_databases.py",
                 "init_database.py", 
-                "setup_fork_environment.sh",
                 "migrate_env_to_config.py"
             ]
         },
@@ -49,7 +48,6 @@ def create_scripts_structure():
         "development": {
             "description": "开发辅助脚本",
             "scripts": [
-                "prepare_upstream_contribution.py",
                 "download_finnhub_sample_data.py",
                 "fix_streamlit_watcher.py"
             ]
@@ -73,12 +71,6 @@ def create_scripts_structure():
                 "start_services_alt_ports.bat",
                 "start_services_simple.bat",
                 "mongo-init.js"
-            ]
-        },
-        "git": {
-            "description": "Git相关脚本",
-            "scripts": [
-                "upstream_git_workflow.sh"
             ]
         }
     }
@@ -170,7 +162,7 @@ python scripts/{category}/script_name.py
 - 缓存清理
 - 数据备份
 - 依赖更新
-- 上游同步
+- 版本维护
 
 ### 🛠️ development/ - 开发辅助脚本
 - 代码分析
@@ -189,9 +181,8 @@ python scripts/{category}/script_name.py
 - 数据库初始化
 
 ### 📋 git/ - Git工具脚本
-- 上游同步
 - 分支管理
-- 贡献工作流
+- 仓库检查
 
 ## 使用原则
 
@@ -206,7 +197,7 @@ python scripts/{category}/script_name.py
 cd C:\\code\\FinAgentLab
 
 # Python脚本
-python scripts/validation/verify_gitignore.py
+python scripts/validation/check_dependencies.py
 
 # PowerShell脚本  
 powershell -ExecutionPolicy Bypass -File scripts/maintenance/cleanup.ps1

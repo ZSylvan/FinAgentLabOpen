@@ -56,16 +56,6 @@
         </el-card>
       </el-col>
 
-      <!-- 源项目与论文 -->
-      <el-col :xs="24" :sm="12" :md="8" :lg="6">
-        <el-card class="category-card" shadow="hover" @click="navigateTo('resources')">
-          <div class="card-icon">📖</div>
-          <h3>源项目与论文</h3>
-          <p>FinAgentLab项目介绍和学术论文资源</p>
-          <el-tag type="primary" size="small">2篇文章</el-tag>
-        </el-card>
-      </el-col>
-
       <!-- 实战教程 -->
       <el-col :xs="24" :sm="12" :md="8" :lg="6">
         <el-card class="category-card" shadow="hover" @click="navigateTo('tutorials')">
@@ -157,16 +147,6 @@ const navigateTo = (category: string) => {
 }
 
 const openArticle = (articleId: string) => {
-  // 外链文章直接在新标签打开
-  const externalMap: Record<string, string> = {
-    'getting-started': 'https://mp.weixin.qq.com/s/uAk4RevdJHMuMvlqpdGUEw',
-    'usage-guide-preview': 'https://mp.weixin.qq.com/s/ppsYiBncynxlsfKFG8uEbw'
-  }
-  const external = externalMap[articleId]
-  if (external) {
-    window.open(external, '_blank')
-    return
-  }
   router.push(`/learning/article/${articleId}`)
 }
 </script>
@@ -342,4 +322,3 @@ const openArticle = (articleId: string) => {
   }
 }
 </style>
-

@@ -1090,10 +1090,11 @@ def render_sidebar():
         st.markdown("**📚 帮助资源**")
         
         st.markdown("""
-        - [📖 使用文档](https://github.com/TauricResearch/TradingAgents)
-        - [🐛 问题反馈](https://github.com/TauricResearch/TradingAgents/issues)
-        - [💬 讨论社区](https://github.com/TauricResearch/TradingAgents/discussions)
-        - [🔧 API密钥配置](../docs/security/api_keys_security.md)
+        - [📖 使用文档](https://github.com/ZSylvan/FinAgentLab/tree/main/docs)
+        - [🐛 问题反馈](https://github.com/ZSylvan/FinAgentLab/issues)
+        - [💻 项目仓库](https://github.com/ZSylvan/FinAgentLab)
+        - 🔧 配置指南：
+          <https://github.com/ZSylvan/FinAgentLab/tree/main/docs/configuration>
         """)
     
     # 确保返回session state中的值，而不是局部变量

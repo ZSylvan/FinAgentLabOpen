@@ -68,7 +68,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.backend
-    image: hsliup/finagentlab-backend:v1.0.1
+    image: ghcr.io/zsylvan/finagentlab-backend:v1.0.1
     container_name: finagentlab-backend
     restart: unless-stopped
     expose:
@@ -154,7 +154,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.frontend
-    image: hsliup/finagentlab-frontend:v1.0.1
+    image: ghcr.io/zsylvan/finagentlab-frontend:v1.0.1
     container_name: finagentlab-frontend
     restart: unless-stopped
     expose:
@@ -205,4 +205,3 @@ volumes:
 networks:
   finagentlab-network:
     driver: bridge
-

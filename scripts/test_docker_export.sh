@@ -125,8 +125,7 @@ else
 fi
 echo ""
 echo "如需重新构建镜像："
-echo "  docker build -t hsliup/finagentlab-backend:latest -f Dockerfile.backend ."
-echo "  docker push hsliup/finagentlab-backend:latest"
+echo "  docker build -t ghcr.io/zsylvan/finagentlab-backend:latest -f Dockerfile.backend ."
+echo "  docker push ghcr.io/zsylvan/finagentlab-backend:latest"
 echo ""
 echo "=========================================="
-

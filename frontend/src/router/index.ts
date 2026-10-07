@@ -243,6 +243,28 @@ const routes: RouteRecordRaw[] = [
     ]
   },
   {
+    path: '/evaluations',
+    name: 'Evaluations',
+    component: () => import('@/layouts/BasicLayout.vue'),
+    meta: {
+      title: '历史回顾评估',
+      icon: 'DataAnalysis',
+      requiresAuth: true,
+      transition: 'fade'
+    },
+    children: [
+      {
+        path: '',
+        name: 'EvaluationHistory',
+        component: () => import('@/views/Evaluation/index.vue'),
+        meta: {
+          title: '历史回顾评估',
+          requiresAuth: true
+        }
+      }
+    ]
+  },
+  {
     path: '/settings',
     name: 'Settings',
     component: () => import('@/layouts/BasicLayout.vue'),

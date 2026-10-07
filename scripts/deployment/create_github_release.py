@@ -114,13 +114,9 @@ python cli/main.py --llm-provider google --model gemini-2.0-flash --stock TSLA
 - **嵌入服务**: 阿里百炼（自动配置）
 - **分析师**: 市场技术 + 基本面分析师
 
-### 🙏 致谢
-
-感谢 [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) 原始项目的开发者们，为金融AI领域提供了优秀的开源框架。
-
 ### 📄 许可证
 
-本项目遵循 Apache 2.0 许可证。
+许可范围和第三方归属请参阅仓库中的 LICENSE 与 THIRD_PARTY_NOTICES.md。
 
 ---
 
@@ -141,11 +137,14 @@ def show_release_info():
     logger.info(f"  📚 详细的使用文档")
     
     logger.info(f"\n🔗 GitHub链接:")
-    logger.info(f"  📦 Release: https://github.com/YOUR_USERNAME/FinAgentLab/releases/tag/cn-v0.1.2")
-    logger.info(f"  📝 代码: https://github.com/YOUR_USERNAME/FinAgentLab")
+    logger.info(
+        "  📦 Release: "
+        "https://github.com/ZSylvan/FinAgentLab/releases/tag/v0.1.2"
+    )
+    logger.info(f"  📝 代码: https://github.com/ZSylvan/FinAgentLab")
     
     logger.info(f"\n🚀 快速开始:")
-    logger.info(f"  1. git clone https://github.com/YOUR_USERNAME/FinAgentLab.git")
+    logger.info(f"  1. git clone https://github.com/ZSylvan/FinAgentLab.git")
     logger.info(f"  2. cd FinAgentLab")
     logger.info(f"  3. pip install -r requirements.txt")
     logger.info(f"  4. python -m streamlit run web/app.py")
@@ -181,9 +180,9 @@ def main():
     logger.info(f"✅ Git状态检查通过")
     
     # 检查标签是否存在
-    success, stdout, stderr = run_command("git tag -l cn-v0.1.2")
-    if not success or "cn-v0.1.2" not in stdout:
-        logger.error(f"❌ 标签 cn-v0.1.2 不存在")
+    success, stdout, stderr = run_command("git tag -l v0.1.2")
+    if not success or "v0.1.2" not in stdout:
+        logger.error(f"❌ 标签 v0.1.2 不存在")
         return False
     
     logger.info(f"✅ 版本标签检查通过")
@@ -200,8 +199,8 @@ def main():
     # 显示GitHub Release创建指南
     logger.info(f"\n📋 GitHub Release创建指南:")
     logger.info(f"=")
-    logger.info(f"1. 访问: https://github.com/YOUR_USERNAME/FinAgentLab/releases/new")
-    logger.info(f"2. 选择标签: cn-v0.1.2")
+    logger.info(f"1. 访问: https://github.com/ZSylvan/FinAgentLab/releases/new")
+    logger.info(f"2. 选择标签: v0.1.2")
     logger.info(f"3. 发布标题: FinAgentLab v0.1.2 - Web管理界面和Google AI支持")
     logger.info(f"4. 复制 RELEASE_NOTES_v0.1.2.md 的内容到描述框")
     logger.info(f"5. 勾选 'Set as the latest release'")

@@ -63,6 +63,5 @@ def check_export_file(filepath: str):
         traceback.print_exc()
 
 if __name__ == "__main__":
-    filepath = r"C:\Users\hsliu\Downloads\database_export_config_reports_2025-11-11.json"
+    filepath = "database_export_config_reports.json"
     check_export_file(filepath)
-

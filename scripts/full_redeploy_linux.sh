@@ -16,7 +16,7 @@ NC='\033[0m'
 if [ $# -lt 1 ]; then
     echo -e "${RED}错误: 缺少必需参数${NC}"
     echo "使用方法: $0 <dockerhub-username> [version] [branch]"
-    echo "示例: $0 hsliup v1.0.0-preview v1.0.0-preview"
+    echo "示例: $0 zsylvan v1.0.0-preview v1.0.0-preview"
     exit 1
 fi
 

@@ -73,11 +73,6 @@ const categoryMap: Record<string, any> = {
     icon: '⚠️',
     description: '了解AI的潜在问题和正确使用方式'
   },
-  'resources': {
-    title: '源项目与论文',
-    icon: '📖',
-    description: 'FinAgentLab项目介绍和学术论文资源'
-  },
   'tutorials': {
     title: '实战教程',
     icon: '🎓',
@@ -164,26 +159,6 @@ const articlesDatabase: Record<string, any[]> = {
       difficultyText: '入门'
     }
   ],
-  'resources': [
-    {
-      id: 'finagentlab-intro',
-      title: 'FinAgentLab项目介绍',
-      description: '了解FinAgentLab的源项目TradingAgents的架构和特性',
-      readTime: '15分钟',
-      views: 1432,
-      difficulty: 'warning',
-      difficultyText: '进阶'
-    },
-    {
-      id: 'paper-guide',
-      title: 'FinAgentLab论文解读',
-      description: '深度解读FinAgentLab学术论文的核心内容和创新点',
-      readTime: '20分钟',
-      views: 987,
-      difficulty: 'danger',
-      difficultyText: '高级'
-    }
-  ],
   'tutorials': [
     {
       id: 'getting-started',
@@ -195,9 +170,9 @@ const articlesDatabase: Record<string, any[]> = {
       difficultyText: '入门'
     },
     {
-      id: 'usage-guide-preview',
-      title: '使用指南（试用版）',
-      description: 'FinAgentLab v1.0.1 使用指南与试用说明',
+      id: 'user-manual',
+      title: 'FinAgentLab 使用手册',
+      description: '配置、同步、分析与故障排查指南',
       readTime: '15分钟',
       views: 1288,
       difficulty: 'success',
@@ -227,16 +202,6 @@ const goBack = () => {
 }
 
 const openArticle = (articleId: string) => {
-  // 外链文章在列表点击时直接新标签页打开，不进入详情页
-  const externalMap: Record<string, string> = {
-    'getting-started': 'https://mp.weixin.qq.com/s/uAk4RevdJHMuMvlqpdGUEw',
-    'usage-guide-preview': 'https://mp.weixin.qq.com/s/ppsYiBncynxlsfKFG8uEbw'
-  }
-  const external = externalMap[articleId]
-  if (external) {
-    window.open(external, '_blank')
-    return
-  }
   router.push(`/learning/article/${articleId}`)
 }
 </script>
@@ -368,4 +333,3 @@ const openArticle = (articleId: string) => {
   }
 }
 </style>
-

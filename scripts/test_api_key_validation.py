@@ -34,13 +34,13 @@ def test_api_key_validation():
         ("your-test-key", False, "占位符 - your- 前缀"),
         ("some_key_here", False, "占位符 - _here 后缀"),
         ("some-key-here", False, "占位符 - -here 后缀"),
-        ('dummy-key-aaaaaaaaaaaaaaaaaaaa', True, '有效的 API Key'),
-        ('dummy-key-bbbbbbbbbbbbbbbbbbbb', True, '有效的 API Key'),
-        ('dummy-key-cccccccccccccccccccc', True, '有效的 Google API Key'),
+        ('dummy-key-eeeeeeeeeeeeeeeeeeee', True, '有效的 API Key'),
+        ('dummy-key-ffffffffffffffffffff', True, '有效的 API Key'),
+        ('dummy-key-gggggggggggggggggggg', True, '有效的 Google API Key'),
         ('dummy-baidu-key-aaaaaaaaaaaaaaaaaaaa', True, '有效的千帆 API Key'),
         ('dummy-openrouter-key-aaaaaaaaaaaaaaaaaaaa', True, '有效的 OpenRouter API Key'),
-        ('"dummy-key-ffffffffffffffffffff"', True, '带引号的有效 API Key'),
-        ("'dummy-key-gggggggggggggggggggg'", True, '带单引号的有效 API Key'),
+        ('"dummy-key-cccccccccccccccccccc"', True, '带引号的有效 API Key'),
+        ("'dummy-key-dddddddddddddddddddd'", True, '带单引号的有效 API Key'),
     ]
     
     print("\n" + "=" * 80)

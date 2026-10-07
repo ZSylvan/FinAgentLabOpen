@@ -194,9 +194,8 @@
   },
   
   "技术支持": {
-    "文档": "https://github.com/YOUR_USERNAME/FinAgentLab/tree/v1.0.0-preview/docs",
-    "Issues": "https://github.com/YOUR_USERNAME/FinAgentLab/issues",
-    "示例": "https://github.com/YOUR_USERNAME/FinAgentLab/tree/v1.0.0-preview/examples"
+    "文档": "https://github.com/ZSylvan/FinAgentLab/tree/main/docs",
+    "Issues": "https://github.com/ZSylvan/FinAgentLab/issues",
+    "示例": "https://github.com/ZSylvan/FinAgentLab/tree/main/examples"
   }
 }
-

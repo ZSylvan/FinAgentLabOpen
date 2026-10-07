@@ -79,7 +79,7 @@ export const useAuthStore = defineStore('auth', {
     
     // 是否为管理员
     isAdmin(): boolean {
-      return this.roles.includes('admin')
+      return this.user?.is_admin === true
     },
     
     // 检查权限
@@ -120,6 +120,7 @@ export const useAuthStore = defineStore('auth', {
 
       if (user) {
         this.user = user
+        this.setAuthorizationFromUser(user)
       }
 
       // 手动保存到localStorage（确保持久化）
@@ -197,10 +198,6 @@ export const useAuthStore = defineStore('auth', {
 
           // 设置认证信息
           this.setAuthInfo(access_token, refresh_token, user)
-
-          // 开源版admin用户拥有所有权限
-          this.permissions = ['*']
-          this.roles = ['admin']
 
           // 同步用户偏好设置到 appStore
           this.syncUserPreferencesToAppStore()
@@ -320,6 +317,8 @@ export const useAuthStore = defineStore('auth', {
 
         if (response.success) {
           this.user = response.data
+          this.setAuthorizationFromUser(response.data)
+          localStorage.setItem('user-info', JSON.stringify(response.data))
           console.log('✅ 用户信息获取成功:', this.user?.username)
 
           // 同步用户偏好设置到 appStore
@@ -337,11 +336,17 @@ export const useAuthStore = defineStore('auth', {
       }
     },
     
-    // 开源版不需要权限检查，admin拥有所有权限
+    // 权限由后端返回的最新数据库用户信息决定
     async fetchUserPermissions() {
-      this.permissions = ['*']
-      this.roles = ['admin']
+      if (this.user) {
+        this.setAuthorizationFromUser(this.user)
+      }
       return true
+    },
+
+    setAuthorizationFromUser(user: User) {
+      this.roles = [user.is_admin ? 'admin' : 'user']
+      this.permissions = user.is_admin ? ['*'] : []
     },
     
     // 更新用户信息

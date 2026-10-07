@@ -17,7 +17,7 @@
           </p>
           <div class="hero-acknowledgment">
             <el-icon><Star /></el-icon>
-            <span>基于 <a href="https://github.com/TauricResearch/TradingAgents" target="_blank" rel="noopener noreferrer">TradingAgents</a> 项目开发，感谢原项目的贡献</span>
+            <span>由当前维护者独立维护，代码与问题跟踪统一托管在 ZSylvan/FinAgentLab</span>
           </div>
           <div class="hero-actions">
             <el-button type="primary" size="large" @click="goToAnalysis">
@@ -246,11 +246,11 @@
       </div>
     </div>
 
-    <!-- 项目来源 -->
+    <!-- 项目维护 -->
     <div class="origin-section">
       <div class="section-header">
-        <h2 class="section-title">项目来源</h2>
-        <p class="section-subtitle">致敬开源，感谢原项目的贡献</p>
+        <h2 class="section-title">项目维护</h2>
+        <p class="section-subtitle">围绕学习、研究与可验证工程实践持续演进</p>
       </div>
 
       <div class="origin-content">
@@ -261,23 +261,23 @@
             </div>
             <div class="origin-info">
               <h3>FinAgentLab</h3>
-              <a href="https://github.com/TauricResearch/TradingAgents"
+              <a href="https://github.com/ZSylvan/FinAgentLab"
                  target="_blank"
                  rel="noopener noreferrer"
                  class="origin-link">
                 <el-icon><Link /></el-icon>
-                github.com/TauricResearch/TradingAgents
+                github.com/ZSylvan/FinAgentLab
               </a>
             </div>
           </div>
 
           <div class="origin-description">
             <p>
-              <strong>FinAgentLab</strong> 是基于 <strong>FinAgentLab</strong> 项目开发的中文本地化版本。
-              原项目由 Tauric Research 团队开发，是一个创新的多智能体股票分析框架。
+              <strong>FinAgentLab</strong> 是面向学习、研究和工程实验的多智能体金融分析平台。
+              项目以当前仓库为唯一产品入口，并保留必要的第三方许可信息。
             </p>
             <p>
-              我们在原项目的基础上进行了以下改进和扩展：
+              当前维护重点包括：
             </p>
             <ul class="origin-improvements">
               <li>
@@ -307,7 +307,7 @@
             </ul>
             <p class="origin-thanks">
               <el-icon><Star /></el-icon>
-              <strong>特别感谢</strong> Tauric Research 团队的开源贡献，为我们提供了优秀的技术基础和设计理念。
+              <strong>来源透明：</strong>继承代码的最低必要来源和许可信息集中记录在 THIRD_PARTY_NOTICES.md。
             </p>
           </div>
         </div>
@@ -370,7 +370,7 @@
     <div class="contact-section">
       <div class="section-header">
         <h2 class="section-title">联系我们</h2>
-        <p class="section-subtitle">获取支持、反馈问题或加入社区讨论</p>
+        <p class="section-subtitle">通过当前仓库获取支持和反馈问题</p>
       </div>
 
       <div class="contact-grid">
@@ -378,27 +378,9 @@
           <div class="contact-icon email">
             <el-icon><Message /></el-icon>
           </div>
-          <h4>邮箱联系</h4>
-          <p>hsliup@163.com</p>
-          <span class="contact-desc">技术支持和商务合作</span>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-icon qq">
-            <el-icon><ChatDotRound /></el-icon>
-          </div>
-          <h4>QQ交流群</h4>
-          <p>187537480</p>
-          <span class="contact-desc">用户交流和问题讨论</span>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-icon wechat">
-            <el-icon><ChatDotRound /></el-icon>
-          </div>
-          <h4>微信公众号</h4>
-          <p>FinAgentLab</p>
-          <span class="contact-desc">最新动态和使用教程</span>
+          <h4>GitHub Issues</h4>
+          <p><a href="https://github.com/ZSylvan/FinAgentLab/issues" target="_blank" rel="noopener noreferrer">提交问题</a></p>
+          <span class="contact-desc">错误报告、需求建议和使用问题</span>
         </div>
 
         <div class="contact-card">
@@ -407,7 +389,7 @@
           </div>
           <h4>使用文档</h4>
           <p>
-            <a href="https://mp.weixin.qq.com/s/ppsYiBncynxlsfKFG8uEbw"
+            <a href="https://github.com/ZSylvan/FinAgentLab/tree/main/docs"
                target="_blank"
                rel="noopener noreferrer"
                class="doc-link">
@@ -422,8 +404,8 @@
     <!-- Footer -->
     <div class="footer-section">
       <div class="footer-content">
-        <p>&copy; 2025 FinAgentLab. All rights reserved.</p>
-        <p>许可证说明：开源组件遵循 Apache 2.0；前端与后端采用专有许可证（个人学习/研究免费，商业使用需授权）。</p>
+        <p>FinAgentLab · learning, research and engineering experiments</p>
+        <p>许可范围、非商业限制和第三方归属见仓库 LICENSE 与 THIRD_PARTY_NOTICES.md。</p>
       </div>
     </div>
   </div>
@@ -440,7 +422,6 @@ import {
   Monitor,
   Setting,
   Message,
-  ChatDotRound,
   Cpu,
   Star,
   Link,
@@ -455,7 +436,7 @@ const goToAnalysis = () => {
 }
 
 const viewDocumentation = () => {
-  window.open('https://mp.weixin.qq.com/s/ppsYiBncynxlsfKFG8uEbw', '_blank')
+  window.open('https://github.com/ZSylvan/FinAgentLab/tree/main/docs', '_blank')
 }
 </script>
 
